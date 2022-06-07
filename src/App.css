@@ -1,38 +1,74 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+*{
+ padding: 0%;
+ margin: 0%;
+}
+.header{
+  background-color: rgb(33,37,41);
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
+  color: aliceblue
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.slide-head{
+    background-color: darkslategrey;
+    color: rgb(224, 148, 49);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    text-overflow: clip;
+    text-decoration-line: inherit;
+    outline-color: black;
+    text-decoration: double;
+    text-shadow: 2px 2px 4px red,2px 2px 3px blue;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-shadow: 2px 2px 4px red,2px 2px 3px blue;
+    outline-style: double;
+    outline-width: 10px;
+    user-zoom: 50px;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(167, 123, 123));
   }
-}
+  .error {
+    text-align: center;
+    padding: 200px;
+    margin-bottom: 100px;
+    padding-bottom: 80px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  }
+.brand {
+  background-color: aqua;
+  font-size: 20px;
+  border-radius: 10px;
+  text-shadow: 2px green;
+  outline-style: groove;
+  outline-width: 10px;
+  text-shadow: 2px 2px 4px red,2px 2px 3px blue;
+  font-style: initial;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.dropdown:hover{
+  box-sizing: border-box;
+  color: aqua;
+  text-shadow: 2px 1px 2px greenyellow;
+}
+.icon{
+  margin-bottom: 8px;
+  margin-right: 2px;
+}
+.icon-m{
+  size: 20px;
+  margin-right: 2px;
+}
+.rl{
+  text-align: right;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.form-r{
+  padding: 100px;
+  background-image: repeating-linear-gradient(to left,rgb(76, 153, 160),rgb(176, 206, 199));
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

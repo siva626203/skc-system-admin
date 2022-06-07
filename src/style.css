@@ -1,0 +1,65 @@
+
+  .App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  .slide-container {
+    direction: ltr;
+    width: 90%;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin: auto;
+    box-sizing: content-box;
+    box-shadow: 2px 2px 2px 2px black, 2px 3px red;
+  }
+  .each-slide > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 300px;
+  }
+  .react-slideshow-container .nav[data-type="prev"] span {
+    margin-left: 10px;
+    border-right: none;
+    border-top: none;
+  }
+  .react-slideshow-container .nav[data-type="next"] span {
+    margin-right: 10px;
+    border-left: none;
+    border-bottom: none;
+  }
+
+  .each-fade {
+    display: flex;
+  }
+  .each-fade .image-container {
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .each-fade .image-container img {
+    width: 100%;
+    height: 100%;
+  }
+  .each-fade h2 {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background: #adceed;
+  }
+  .react-slideshow-container + div.indicators > div:last-of-type {
+    margin-right: 10px;
+  }
+  .each-slide:hover{
+    opacity: 2.3;
+  }
+  .align-content-end{
+    display: flex;
+  }
+  .ft-licence{
+ margin-top: 10px;
+ text-overflow: ellipsis;
+  }
