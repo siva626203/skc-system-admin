@@ -26,7 +26,7 @@ class  Header extends Component{
         <Nav.Link as={Link} to="/faculty" className="dropdown"><IoIosPeople className='icon-m'/>Faculty</Nav.Link>
         <Nav.Link as={Link} to="/gallery" className="dropdown"><RiGalleryFill className='icon-m'/>Gallery</Nav.Link>
         <Nav.Link as={Link} to="/department" className="dropdown"><MdOutlineSchool className="icon-m"/>Department Activities</Nav.Link>
-        <Nav.Link as={Link} to="/firebasetest" className="dropdown"><IoIosPeople className='icon-m'/>Firebasetest</Nav.Link>
+
         <NavDropdown title="Achievements" id="basic-nav-dropdown" className="dropdown">
 
           <NavDropdown.Item as={Link} to="/staff" className="dropdown-a"><GiAchievement className='icon'/>Staff Achievement</NavDropdown.Item>

@@ -5,7 +5,7 @@ import Student from './pages/home';
 import Error from './pages/err';
 import { Routes,Route,Switch} from 'react-router-dom';
 import Body from './components/body';
-import Register from './pages/register';
+
 import Faculty from './pages/faculty';
 import Gallery from './pages/gallery';
 import React, { Suspense, lazy } from 'react';
@@ -19,7 +19,7 @@ function App() {
       
       
       <Routes>
-        <Route path='/register' element={<Register/>}></Route>
+       
         <Route path='/login' element={<Logintype />}></Route>
         <Route path='/' exact element={<Slideshow />}></Route>
         <Route path='/e-commerce-website' exact element={<Slideshow />}></Route>
