@@ -3,23 +3,26 @@ import { Fragment, useState } from 'react';
 
 function Logintype() {
     const [show, setShow] = useState(false);
-  
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-  
+    
+    const [run, setrun] = useState(false);
+    const Close = () => setrun(false);
+    const Showitem = () => setrun(true);
     return (
         <Fragment>
-      <><center>
-        <Button className='login-btn' variant="primary" onClick={handleShow}>
-         Teacher Login
-        </Button>
-  
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Teacher Login Page</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-          <div>
+    
+            <div><center>
+            <Button className='login-btn' variant="primary" onClick={Showitem}>
+             Student Login
+            </Button>
+      
+            <Modal show={run} onHide={Close}>
+              <Modal.Header closeButton>
+                <Modal.Title>Student Login Page</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+              <div>
         <Form className="form-r">
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Enter Your Register NO</Form.Label>
@@ -40,27 +43,27 @@ function Logintype() {
   </Button>
 </Form>
 </div>
-            
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Login
-            </Button>
-          </Modal.Footer>
-        </Modal>
-        </center>
-      </>
-            <div><center>
+                
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={Close}>
+                  Close
+                </Button>
+                <Button variant="primary" onClick={Close}>
+                  Login
+                </Button>
+              </Modal.Footer>
+            </Modal>
+            </center>
+          </div>
+          <div><center>
             <Button className='login-btn' variant="primary" onClick={handleShow}>
-             Student Login
+             Teacher Login
             </Button>
       
             <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton>
-                <Modal.Title>Student Login Login Page</Modal.Title>
+                <Modal.Title>Teacher Login Page</Modal.Title>
               </Modal.Header>
               <Modal.Body>
               <div>
@@ -98,8 +101,9 @@ function Logintype() {
             </center>
           </div>
           </Fragment>
+          
       
     );
-  }
+    }
   
 export default Logintype;

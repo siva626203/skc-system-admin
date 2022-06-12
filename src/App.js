@@ -29,6 +29,8 @@ function App() {
          <Route path='/faculty' element={<Faculty />} />
          <Route path='/gallery' element={<Gallery />}/>
          
+    
+          
       </Routes>
       
       
