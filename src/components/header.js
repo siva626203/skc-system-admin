@@ -32,7 +32,6 @@ class  Header extends Component{
           <NavDropdown.Item as={Link} to="/staff" className="dropdown-a"><GiAchievement className='icon'/>Staff Achievement</NavDropdown.Item>
           <NavDropdown.Item as={Link} to="/student" className="dropdown-a"><GiAchievement className='icon'/>Students Achievement</NavDropdown.Item>
         </NavDropdown>
-        <Nav.Link as={Link} to="/register" className="dropdown"><AiFillHome className='icon'/>Register</Nav.Link>
         <Nav.Link as={Link} to="/about" className="dropdown"><BsBook className='icon-m'/>About</Nav.Link>
         <Nav.Link as={Link} to="/login" className="dropdown"><ImEnter className='icon-m'/>Login</Nav.Link>
       </Nav>
