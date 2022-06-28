@@ -72,3 +72,16 @@
   background-image: repeating-linear-gradient(to left,rgb(76, 153, 160),rgb(176, 206, 199));
 }
 
+@media only screen and (max-width: 600px) {
+  h1{
+    font-size: 20px;
+    
+  }
+  .footer-m{
+    font-size: 15px;
+    direction: initial;
+  }
+  .align-content-end{
+    
+  }
+}

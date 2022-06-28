@@ -12,6 +12,7 @@ import React, { Suspense, lazy } from 'react';
 import Logintype from './pages/logintype';
 
 
+
 function App() {
   return (
     <div>
@@ -19,7 +20,8 @@ function App() {
       
       
       <Routes>
-       
+
+
         <Route path='/login' element={<Logintype />}></Route>
         <Route path='/' exact element={<Slideshow />}></Route>
         <Route path='/e-commerce-website' exact element={<Slideshow />}></Route>
@@ -27,8 +29,10 @@ function App() {
         <Route path='/staff' element={<Body />}></Route>
          <Route path='/student' element={<Student />} />
          <Route path='/faculty' element={<Faculty />} />
+
          <Route path='/gallery' element={<Gallery />}/>
-         
+  
+     
     
           
       </Routes>

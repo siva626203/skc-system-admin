@@ -25,4 +25,4 @@ const analytics = getAnalytics(app);
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
   
-export default database;
+export default {app};

@@ -1,4 +1,4 @@
-import {Modal,Button,Form} from 'react-bootstrap'
+import {Modal,Button,Form,Showitem,Run} from 'react-bootstrap'
 import { Fragment, useState } from 'react';
 
 function Logintype() {

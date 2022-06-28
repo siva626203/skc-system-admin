@@ -8,6 +8,7 @@ import { FaFacebookF } from 'react-icons/fa';
      render()
      {
          return(
+          <div className='footer-m'>
             <Navbar className="navbar fixed-bottom" bg="primary" variant="dark">
             <Container>
             <Navbar.Brand>Contact Us</Navbar.Brand>
@@ -23,6 +24,7 @@ import { FaFacebookF } from 'react-icons/fa';
             </Nav>
             </Container>
           </Navbar>
+          </div>
          );
      }
 

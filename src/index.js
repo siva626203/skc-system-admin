@@ -6,6 +6,7 @@ import './index.css';
 import './css/logintype.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { lazy,Suspense } from 'react';
 
 ReactDOM.render(
   <React.StrictMode>
