@@ -1,109 +1,81 @@
-import {Modal,Button,Form,Showitem,Run} from 'react-bootstrap'
-import { Fragment, useState } from 'react';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Form, Alert } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import GoogleButton from "react-google-button";
+import { useUserAuth } from "../context/UserAuthContext";
 
-function Logintype() {
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    
-    const [run, setrun] = useState(false);
-    const Close = () => setrun(false);
-    const Showitem = () => setrun(true);
-    return (
-        <Fragment>
-    
-            <div><center>
-            <Button className='login-btn' variant="primary" onClick={Showitem}>
-             Student Login
-            </Button>
-      
-            <Modal show={run} onHide={Close}>
-              <Modal.Header closeButton>
-                <Modal.Title>Student Login Page</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-              <div>
-        <Form className="form-r">
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Enter Your Register NO</Form.Label>
-    <Form.Control type="email" placeholder="A11UIT00" />
-    <Form.Text className="text-muted">
-      We'll never share your ID with anyone else.
-    </Form.Text>
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Enter Your Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-   <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
-</Form>
-</div>
-                
-              </Modal.Body>
-              <Modal.Footer>
-                <Button variant="secondary" onClick={Close}>
-                  Close
-                </Button>
-                <Button variant="primary" onClick={Close}>
-                  Login
-                </Button>
-              </Modal.Footer>
-            </Modal>
-            </center>
-          </div>
-          <div><center>
-            <Button className='login-btn' variant="primary" onClick={handleShow}>
-             Teacher Login
-            </Button>
-      
-            <Modal show={show} onHide={handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>Teacher Login Page</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-              <div>
-        <Form className="form-r">
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Enter Your Register NO</Form.Label>
-    <Form.Control type="email" placeholder="A11UIT00" />
-    <Form.Text className="text-muted">
-      We'll never share your ID with anyone else.
-    </Form.Text>
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Enter Your Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-   <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
-</Form>
-</div>
-                
-              </Modal.Body>
-              <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                  Close
-                </Button>
-                <Button variant="primary" onClick={handleClose}>
-                  Login
-                </Button>
-              </Modal.Footer>
-            </Modal>
-            </center>
-          </div>
-          </Fragment>
-          
-      
-    );
+const Logintype = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const { logIn, googleSignIn } = useUserAuth();
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      await logIn(email, password);
+      navigate("/dashboard");
+    } catch (err) {
+      setError(err.message);
     }
-  
+  };
+
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      await googleSignIn();
+      navigate("/dashboard");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  return (
+    <>
+      <div className="p-4 box">
+        <h2 className="mb-3">Login</h2>
+        {error && <Alert variant="danger">{error}</Alert>}
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
+              type="email"
+              placeholder="Email address"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Form.Group>
+
+          <div className="d-grid gap-2">
+            <Button variant="primary" type="Submit">
+              Log In
+            </Button>
+          </div>
+        </Form>
+        <hr />
+        <div>
+          <GoogleButton
+            className="g-btn"
+            type="dark"
+            onClick={handleGoogleSignIn}
+          />
+        </div>
+      </div>
+      <div className="p-4 box mt-3 text-center">
+        Don't have an account? <Link to="/register">Sign up</Link>
+      </div>
+    </>
+  );
+};
+
+
 export default Logintype;

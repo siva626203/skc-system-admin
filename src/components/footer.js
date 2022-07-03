@@ -3,6 +3,7 @@ import {Navbar,Nav,Container} from 'react-bootstrap'
 import { SiGmail } from "react-icons/si";
 import { AiFillYoutube } from "react-icons/ai";
 import { FaFacebookF } from 'react-icons/fa';
+import '../css/footer.css'
 
  class  Footer extends Component{
      render()
@@ -11,8 +12,8 @@ import { FaFacebookF } from 'react-icons/fa';
           <div className='footer-m'>
             <Navbar className="navbar fixed-bottom" bg="primary" variant="dark">
             <Container>
-            <Navbar.Brand>Contact Us</Navbar.Brand>
-            <Nav className="me-auto ">
+            <Navbar.Brand className='Brand'>Contact Us</Navbar.Brand>
+            <Nav className="me-auto">
             
               <div className="align-content-end">
               <Nav.Link href="mailto:skcit@gmail.com"><SiGmail className='icon'/>Gmail</Nav.Link>

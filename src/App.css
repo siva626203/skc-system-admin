@@ -77,11 +77,12 @@
     font-size: 20px;
     
   }
-  .footer-m{
-    font-size: 15px;
-    direction: initial;
-  }
-  .align-content-end{
-    
-  }
+
+
+}
+.App{
+  font-size: 15px;
+  background-color: aqua;
+  padding: 10px;
+  margin:10px 10px;
 }
